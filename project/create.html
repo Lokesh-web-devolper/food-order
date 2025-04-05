@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cree.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="av">
+    <div class="sign" >
+        <h1 class="man-h1">Create Account</h1>
+      <form class="sign-1" id="signup-form">
+        <input class="inpu-1" type="text" name="fname" placeholder="First name" required>
+        <input class="inpu-1" type="text" name="lname" placeholder="Last name" required>
+        <input class="inpu-1" type="email" name="email" id="email1" placeholder="Email" required>
+        <input class="inpu-1" type="password" name="password" id="password2" placeholder="password" required>
+        <input class="inpu-1" type="password" name="confirm password" id="password3" placeholder="confirm password" required>
+        <label for="datee">DATE-OF-BIRTH</label>
+        <input class="inpu-1" type="date" id="datee">
+        <button class="butt" type="submit" onclick="ope()">Create account</button>
+      </form>
+      <button onclick="func()" class="txx">Back to login</button>
+      </div>
+  </div>
+  <script type="text/javascript">
+    function func()
+    {
+        window.location.href = "sig.html";
+    }
+    function ope(event) {
+    event.preventDefault();
+    
+    let email = document.getElementById("email1").value;
+    let password = document.getElementById("password2").value;
+    let password1 = document.getElementById("password3").value;
+    
+    if (!email.includes('@') || !email.includes('.')) {
+        alert('Invalid email format');
+        return;
+    }
+    if(password!=password1)
+    {
+        alert("The password not same");
+        return ;
+    }
+    if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        return;
+    }
+    window.location.href = "index.html";
+}
+document.getElementById("signup-form").addEventListener('submit', ope);
+  </script>
+</body>
+</html>
